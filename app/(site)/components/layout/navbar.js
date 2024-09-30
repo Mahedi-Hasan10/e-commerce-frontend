@@ -12,10 +12,10 @@ import { FaBagShopping } from "react-icons/fa6";
 import { LuPhoneCall } from "react-icons/lu";
 import { Input } from '@/components/ui/input';
 import { SingleCategoryMenu } from '../common/categoryNav';
+import MyTooltip from '../common/tooltip';
 const Navbar = () => {
     return (
         <header>
-            {/* topbar */}
             <div className="md:py-4 py-2 bg-black/90">
                 <div className="container flex justify-between items-center">
                     <div className="flex md:gap-2 gap-1 items-center">
@@ -62,36 +62,48 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-2 text-white md:text-xl text-lg font-semibold ">
                         <FaSearch className="md:hidden flex" />
-                        <FiShoppingCart className="cursor-pointer" />
-                        <CiHeart className="cursor-pointer" />
-                        <FaUser className="cursor-pointer" />
+                        <FiShoppingCart className="cursor-pointer md:flex hidden" />
+                        <CiHeart className="cursor-pointer text-2xl" />
+                        <FaUser className="cursor-pointer md:flex hidden" />
                     </div>
                 </div>
             </div>
             <div className="  md:py-4 py-2 border-b border-b-gray-500 border-opacity-15">
                 <div className="flex items-center justify-between flex-wraps container gap-4">
-                    <div className="flex gap-4 items-center flex-wrap">
+                    <div className="flex gap-4 justify-between items-center flex-wrap">
                         <SingleCategoryMenu />
-                        <div className="flex lg:gap-4 items-center">
+                        <div className="flex lg:gap-4 gap-4 items-center">
                             <div className="bottom_nav_item">
-                                <CiLocationOn />
-                                <p>Track Order</p>
+                                <MyTooltip
+                                    title={<CiLocationOn className="md:text-lg text-2xl" />}
+                                    content={"Track Order"}
+                                />
+                                <p className="md:flex hidden">Track Order</p>
                             </div>
                             <div className="bottom_nav_item">
-                                <GoGitCompare />
-                                <p>Compare</p>
+                                <MyTooltip
+                                    title={<GoGitCompare className="md:text-lg text-2xl" />}
+                                    content={"Compare"}
+                                />
+                                <p className="md:flex hidden">Compare</p>
                             </div>
                             <div className="bottom_nav_item">
-                                <MdOutlineSupportAgent />
-                                <p>Customer Support</p>
+                                <MyTooltip
+                                    title={<MdOutlineSupportAgent className="md:text-lg text-2xl" />}
+                                    content={"Customer Support"}
+                                />
+                                <p className="md:flex hidden">Customer Support</p>
                             </div>
                             <div className="bottom_nav_item">
-                                <IoIosInformationCircleOutline />
-                                <p>Need Help?</p>
+                                <MyTooltip
+                                    title={<IoIosInformationCircleOutline className="md:text-lg text-2xl" />}
+                                    content={"Need Help?"}
+                                />
+                                <p className="md:flex hidden">Need Help?</p>
                             </div>
                         </div>
                     </div>
-                    <div className="bottom_nav_item">
+                    <div className="bottom_nav_item md:!flex !hidden">
                         <LuPhoneCall />
                         <p>+8801998311602</p>
                     </div>
