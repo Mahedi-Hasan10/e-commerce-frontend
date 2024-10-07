@@ -1,4 +1,5 @@
 import "../globals.css";
+import Newsletter from "./components/home/newsletter";
 import BottomBar from "./components/layout/bottomBar";
 import Footer from "./components/layout/footer";
 import Navbar from "./components/layout/navbar";
@@ -12,10 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
         {/* <BottomBar /> */}
-
+      
         <div className="bg-[#191C1F] public-sans">
           <Footer />
         </div>
