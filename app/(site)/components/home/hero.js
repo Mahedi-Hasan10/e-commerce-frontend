@@ -6,9 +6,15 @@ import Button from "../common/button";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
 import "swiper/css";
-import { Section } from "lucide-react";
-// import Slider from "./slider";
+import "swiper/css/effect-fade";
+
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectFade, Navigation, Pagination } from "swiper/modules";
 
 const Hero = () => {
   const items = [
@@ -76,7 +82,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="py-6 container public-sans  ">
+    <section className="py-6 container public-sans">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5 md:gap-x-5 items-center">
         {/* Grid 1 */}
         <div className="col-span-2 bg-[#F2F4F5] p-[25px] rounded-[6px] h-full flex items-center ">
@@ -87,11 +93,12 @@ const Hero = () => {
             loop={true} // Enables loop mode
             pagination={{ clickable: true }} // Optional: pagination dots
             navigation={true} // Optional: adds navigation arrows
+            modules={[EffectFade, Pagination]}
             className="mySwiper"
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>
-                <section className="flex flex-col lg:flex-row justify-between items-center">
+                <section className="flex p-3 flex-col lg:flex-row justify-between items-center">
                   <div className="max-w-[400px] mx-auto lg:mx-0">
                     <p className="text-[#2484C2] text-sm font-[600]">
                       -- THE BEST PLACE TO PLAY

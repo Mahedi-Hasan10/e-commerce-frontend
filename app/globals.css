@@ -81,3 +81,16 @@
 .bottom_nav_item {
   @apply flex lg:gap-2 gap-1 items-center lg:text-lg text-base text-gray-700 hover:text-gray-800 cursor-pointer duration-200;
 }
+@media (min-width: 768px) {
+  .swiper-pagination {
+    width: fit-content !important;
+  }
+}
+
+/* For mobile screens (below 768px) */
+@media (max-width: 767px) {
+  .swiper-pagination {
+    bottom: -5px !important;
+    width: 100% !important; /* Or any other style you prefer for mobile */
+  }
+}

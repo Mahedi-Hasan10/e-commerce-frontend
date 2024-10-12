@@ -129,8 +129,8 @@ const Footer = () => {
               {/* className="flex flex-wrap gap-4" */}
 
               <div className="flex flex-wrap gap-4">
-                {tags.map((tag) => (
-                  <button className="category" key={tag.idx}>
+                {tags.map((tag, idx) => (
+                  <button className="category" key={idx}>
                     {tag}
                   </button>
                 ))}
