@@ -10,98 +10,7 @@ import { useEffect, useState } from "react";
 import { startCountDown } from "../common/countdown"; // Adjust the path based on your project structure
 
 const BestDeal = () => {
-  // const products = [
-  //   {
-  //     index: 1,
-  //     image: "/drone.png",
-  //     productTitle:
-  //       "Xbox Series S - 512GB SSD Console with Wireless Controller - EU Version",
-  //     details:
-  //       "Next-gen gaming console with 512GB SSD and 4K streaming capability.",
-  //     rating: 4.5,
-  //     newPrice: 299.99,
-  //     discount: 0,
-  //     marketStatus: "Hot",
-  //   },
-  //   {
-  //     index: 2,
-  //     image: "/mobile_1.png",
-  //     productTitle:
-  //       "Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear",
-  //     details:
-  //       "Sweat and weather-resistant wireless earbuds with up to 5 hours of battery life.",
-  //     rating: 4.8,
-  //     newPrice: 179.99,
-  //     discount: 10,
-  //     marketStatus: "Sold Out",
-  //   },
-  //   {
-  //     index: 3,
-  //     image: "/controller.png",
-  //     productTitle: "Simple Mobile 4G LTE Prepaid Smartphone",
-  //     details:
-  //       "Affordable prepaid smartphone with 4G LTE support and 32GB storage.",
-  //     rating: 4.2,
-  //     newPrice: 89.99,
-  //     discount: 0,
-  //     marketStatus: "Hot",
-  //   },
-  //   {
-  //     index: 4,
-  //     image: "/headphone.png",
-  //     productTitle: "Sony DSCHX8 High Zoom Point & Shoot Camera",
-  //     details:
-  //       "Compact point-and-shoot camera with 20x optical zoom and 18.2 MP sensor.",
-  //     rating: 4.7,
-  //     newPrice: 359.99,
-  //     discount: 0,
-  //     marketStatus: "Available",
-  //   },
-  //   {
-  //     index: 5,
-  //     image: "/mobile.png",
-  //     productTitle: "Portable Washing Machine, 11lbs Capacity Model 18NMFIAM",
-  //     details:
-  //       "Portable washing machine with 11lbs capacity and twin tub design.",
-  //     rating: 4.3,
-  //     newPrice: 179.99,
-  //     discount: 15, // Updated discount
-  //     marketStatus: "Hot",
-  //   },
-  //   {
-  //     index: 6,
-  //     image: "/toy.png",
-  //     productTitle: "2-Barrel Carburetor Carb 2100 Engine Increase Horsepower",
-  //     details:
-  //       "2-barrel carburetor designed for 2100 engine to increase horsepower.",
-  //     rating: 4.1,
-  //     newPrice: 79.99,
-  //     discount: 25, // Updated discount
-  //     marketStatus: "Available",
-  //   },
-  //   {
-  //     index: 7,
-  //     image: "/mac.png",
-  //     productTitle:
-  //       "JBL FLIP 4 - Waterproof Portable Bluetooth Speaker - Black",
-  //     details:
-  //       "Waterproof Bluetooth speaker with 12 hours of playtime and dual passive bass radiators.",
-  //     rating: 4.5,
-  //     newPrice: 89.99,
-  //     discount: 15, // Updated discount
-  //     marketStatus: "Sold Out",
-  //   },
-  //   {
-  //     index: 8,
-  //     image: "/cctv.png",
-  //     productTitle: "Smartwatch Series 6",
-  //     details: "Fitness tracker with heart rate monitoring and GPS.",
-  //     rating: 4.5,
-  //     newPrice: 349.99,
-  //     discount: 0,
-  //     marketStatus: "Available",
-  //   },
-  // ];
+
   const products = [
     {
       index: 1,
@@ -218,7 +127,7 @@ const BestDeal = () => {
   });
 
   useEffect(() => {
-    const countDownDate = new Date("Nov 5, 2024 15:37:25").getTime();
+    const countDownDate = new Date("Nov 25, 2024 15:37:25").getTime();
 
     // Start the countdown and update the state
     startCountDown(countDownDate, setTimeLeft);

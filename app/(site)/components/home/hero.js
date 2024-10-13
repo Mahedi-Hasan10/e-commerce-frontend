@@ -14,7 +14,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
 // import required modules
-import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import { EffectFade, Pagination } from "swiper/modules";
 
 const Hero = () => {
   const items = [
@@ -92,7 +92,6 @@ const Hero = () => {
             slidesPerView={1} // You can change this to adjust the number of visible slides
             loop={true} // Enables loop mode
             pagination={{ clickable: true }} // Optional: pagination dots
-            navigation={true} // Optional: adds navigation arrows
             modules={[EffectFade, Pagination]}
             className="mySwiper"
           >

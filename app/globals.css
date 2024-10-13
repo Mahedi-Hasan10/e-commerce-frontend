@@ -94,3 +94,25 @@
     width: 100% !important; /* Or any other style you prefer for mobile */
   }
 }
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  background-color: #fa8232;
+  border-radius: 100%;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  width: 15% !important; /* Adjust the width as needed */
+  height: 15% !important;
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;
+  color: white; /* Vertical */
+  /* Adjust the height as needed */
+}
+
+#slide {
+  width: 200px !important;
+  height: auto !important;
+}
