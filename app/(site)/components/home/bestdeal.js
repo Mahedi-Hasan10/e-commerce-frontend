@@ -238,7 +238,7 @@ const BestDeal = () => {
                 <h1>EXPIRED</h1>
               ) : (
                 <h1>
-                  {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
+                  {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :
                   {timeLeft.seconds}s
                 </h1>
               )}
