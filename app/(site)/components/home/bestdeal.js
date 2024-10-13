@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -5,8 +6,102 @@ import { IoEyeOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { Rate } from "antd";
+import { useEffect, useState } from "react";
+import { startCountDown } from "../common/countdown"; // Adjust the path based on your project structure
 
 const BestDeal = () => {
+  // const products = [
+  //   {
+  //     index: 1,
+  //     image: "/drone.png",
+  //     productTitle:
+  //       "Xbox Series S - 512GB SSD Console with Wireless Controller - EU Version",
+  //     details:
+  //       "Next-gen gaming console with 512GB SSD and 4K streaming capability.",
+  //     rating: 4.5,
+  //     newPrice: 299.99,
+  //     discount: 0,
+  //     marketStatus: "Hot",
+  //   },
+  //   {
+  //     index: 2,
+  //     image: "/mobile_1.png",
+  //     productTitle:
+  //       "Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear",
+  //     details:
+  //       "Sweat and weather-resistant wireless earbuds with up to 5 hours of battery life.",
+  //     rating: 4.8,
+  //     newPrice: 179.99,
+  //     discount: 10,
+  //     marketStatus: "Sold Out",
+  //   },
+  //   {
+  //     index: 3,
+  //     image: "/controller.png",
+  //     productTitle: "Simple Mobile 4G LTE Prepaid Smartphone",
+  //     details:
+  //       "Affordable prepaid smartphone with 4G LTE support and 32GB storage.",
+  //     rating: 4.2,
+  //     newPrice: 89.99,
+  //     discount: 0,
+  //     marketStatus: "Hot",
+  //   },
+  //   {
+  //     index: 4,
+  //     image: "/headphone.png",
+  //     productTitle: "Sony DSCHX8 High Zoom Point & Shoot Camera",
+  //     details:
+  //       "Compact point-and-shoot camera with 20x optical zoom and 18.2 MP sensor.",
+  //     rating: 4.7,
+  //     newPrice: 359.99,
+  //     discount: 0,
+  //     marketStatus: "Available",
+  //   },
+  //   {
+  //     index: 5,
+  //     image: "/mobile.png",
+  //     productTitle: "Portable Washing Machine, 11lbs Capacity Model 18NMFIAM",
+  //     details:
+  //       "Portable washing machine with 11lbs capacity and twin tub design.",
+  //     rating: 4.3,
+  //     newPrice: 179.99,
+  //     discount: 15, // Updated discount
+  //     marketStatus: "Hot",
+  //   },
+  //   {
+  //     index: 6,
+  //     image: "/toy.png",
+  //     productTitle: "2-Barrel Carburetor Carb 2100 Engine Increase Horsepower",
+  //     details:
+  //       "2-barrel carburetor designed for 2100 engine to increase horsepower.",
+  //     rating: 4.1,
+  //     newPrice: 79.99,
+  //     discount: 25, // Updated discount
+  //     marketStatus: "Available",
+  //   },
+  //   {
+  //     index: 7,
+  //     image: "/mac.png",
+  //     productTitle:
+  //       "JBL FLIP 4 - Waterproof Portable Bluetooth Speaker - Black",
+  //     details:
+  //       "Waterproof Bluetooth speaker with 12 hours of playtime and dual passive bass radiators.",
+  //     rating: 4.5,
+  //     newPrice: 89.99,
+  //     discount: 15, // Updated discount
+  //     marketStatus: "Sold Out",
+  //   },
+  //   {
+  //     index: 8,
+  //     image: "/cctv.png",
+  //     productTitle: "Smartwatch Series 6",
+  //     details: "Fitness tracker with heart rate monitoring and GPS.",
+  //     rating: 4.5,
+  //     newPrice: 349.99,
+  //     discount: 0,
+  //     marketStatus: "Available",
+  //   },
+  // ];
   const products = [
     {
       index: 1,
@@ -16,10 +111,10 @@ const BestDeal = () => {
       details:
         "Next-gen gaming console with 512GB SSD and 4K streaming capability.",
       rating: 4.5,
-      oldPrice: 299.99,
       newPrice: 299.99,
       discount: 0,
-      marketStatus: "Hot", // Updated marketStatus
+      marketStatus: "Available",
+      sellingStatus: "Hot", // Added sellingStatus
     },
     {
       index: 2,
@@ -29,10 +124,10 @@ const BestDeal = () => {
       details:
         "Sweat and weather-resistant wireless earbuds with up to 5 hours of battery life.",
       rating: 4.8,
-      oldPrice: 199.99,
       newPrice: 179.99,
       discount: 10,
       marketStatus: "Sold Out",
+      sellingStatus: "Hot", // Added sellingStatus
     },
     {
       index: 3,
@@ -41,10 +136,10 @@ const BestDeal = () => {
       details:
         "Affordable prepaid smartphone with 4G LTE support and 32GB storage.",
       rating: 4.2,
-      oldPrice: 99.99,
       newPrice: 89.99,
-      discount: 70,
-      marketStatus: "Hot", // Updated marketStatus
+      discount: 10,
+      marketStatus: "Available",
+      sellingStatus: "", // Added sellingStatus
     },
     {
       index: 4,
@@ -53,10 +148,10 @@ const BestDeal = () => {
       details:
         "Compact point-and-shoot camera with 20x optical zoom and 18.2 MP sensor.",
       rating: 4.7,
-      oldPrice: 399.99,
       newPrice: 359.99,
-      discount: 30,
-      marketStatus: "Aviable", // Updated marketStatus
+      discount: 0,
+      marketStatus: "Available",
+      sellingStatus: "Hot", // Added sellingStatus
     },
     {
       index: 5,
@@ -65,10 +160,10 @@ const BestDeal = () => {
       details:
         "Portable washing machine with 11lbs capacity and twin tub design.",
       rating: 4.3,
-      oldPrice: 199.99,
       newPrice: 179.99,
-      discount: 40,
-      marketStatus: "Hot", // Updated marketStatus
+      discount: 15,
+      marketStatus: "Available",
+      sellingStatus: "", // Added sellingStatus
     },
     {
       index: 6,
@@ -77,10 +172,10 @@ const BestDeal = () => {
       details:
         "2-barrel carburetor designed for 2100 engine to increase horsepower.",
       rating: 4.1,
-      oldPrice: 79.99,
       newPrice: 79.99,
-      discount: 0,
-      marketStatus: "Aviable",
+      discount: 25,
+      marketStatus: "Available",
+      sellingStatus: "Hot", // Added sellingStatus
     },
     {
       index: 7,
@@ -90,35 +185,44 @@ const BestDeal = () => {
       details:
         "Waterproof Bluetooth speaker with 12 hours of playtime and dual passive bass radiators.",
       rating: 4.5,
-      oldPrice: 99.99,
       newPrice: 89.99,
-      discount: 10,
+      discount: 15,
       marketStatus: "Sold Out",
+      sellingStatus: "Hot", // Added sellingStatus
     },
-
     {
       index: 8,
       image: "/cctv.png",
       productTitle: "Smartwatch Series 6",
       details: "Fitness tracker with heart rate monitoring and GPS.",
       rating: 4.5,
-      oldPrice: 399.99,
       newPrice: 349.99,
-      discount: 12,
-      marketStatus: "Aviable", // Updated marketStatus
+      discount: 0,
+      marketStatus: "Available",
+      sellingStatus: "", // Added sellingStatus
     },
-    // {
-    //   index: 9,
-    //   image: "img/ps5_1.png",
-    //   productTitle: "Coffee Maker",
-    //   details: "Automatic drip coffee maker with programmable timer.",
-    //   rating: 4.4,
-    //   oldPrice: 79.99,
-    //   newPrice: 69.99,
-    //   discount: "12%",
-    //   marketStatus: "Available",
-    // },
   ];
+
+  function discount(percent, price) {
+    const discountedPrice = (price * (100 - percent)) / 100;
+    const discountedPriceRounded = Math.round(discountedPrice);
+    return discountedPriceRounded;
+  }
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    expired: false,
+  });
+
+  useEffect(() => {
+    const countDownDate = new Date("Nov 5, 2024 15:37:25").getTime();
+
+    // Start the countdown and update the state
+    startCountDown(countDownDate, setTimeLeft);
+  }, []);
 
   return (
     <div className="container public-sans">
@@ -128,7 +232,17 @@ const BestDeal = () => {
           <h1 className="text-2xl font-semibold">Best Deals</h1>
           <div className="hidden lg:flex gap-2 ">
             <p className="">Deals Ends In </p>
-            <time className="bg-[#F3DE6D] px-2"> 16d : 21h : 57m : 23s</time>
+
+            <time className="bg-[#F3DE6D] px-2">
+              {timeLeft.expired ? (
+                <h1>EXPIRED</h1>
+              ) : (
+                <h1>
+                  {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
+                  {timeLeft.seconds}s
+                </h1>
+              )}
+            </time>
           </div>
         </div>
 
@@ -162,7 +276,7 @@ const BestDeal = () => {
               Versio...
             </h1>
             <h1 className="text-xl">
-              <del className="mr-2 text-gray-400">400.0 </del>{" "}
+              <del className="mr-2 text-gray-400">400.0 </del>
               <span className="text-[#2DA5F3]">$ 299.0</span>
             </h1>
             <p className="text-[#5F6C72] max-w-[280px]">
@@ -221,25 +335,54 @@ const BestDeal = () => {
               <summary className="line-clamp-2 text-sm">
                 {product.productTitle}
               </summary>
-              <h1 className="text-[#2DA5F3] font-semibold ">$ 2300</h1>
+              <h1 className="text-[#2DA5F3] font-semibold ">
+                {product.discount > 0 && (
+                  <del className="text-gray-600">${product.newPrice}</del>
+                )}
+                <span className="text-[#2DA5F3] ml-2">
+                  $ {discount(product.discount, product.newPrice)}
+                </span>
+              </h1>
 
-              {product?.discount > 0 && product.marketStatus !== "Sold Out" ? (
-                <div className="w-20 p-1 flex justify-center items-center rounded-md text-sm text-white bg-[#EFD33D] absolute left-0 top-0 ml-2 z-10">
-                  <h1>{product.discount} % OFF</h1>
-                </div>
+              {product?.marketStatus === "Available" ? (
+                product?.discount > 0 && (
+                  <div className="absolute left-0 top-0 ml-2 z-10">
+                    {product?.sellingStatus === "Hot" && (
+                      <div
+                        className={`w-16 p-1 flex justify-center items-center rounded-md text-sm text-white bg-[#EE5858]`}
+                      >
+                        <h1>{product.sellingStatus}</h1>
+                      </div>
+                    )}
+
+                    {product?.discount > 0 && (
+                      <div
+                        className={`w-20 p-1 flex justify-center items-center rounded-md text-sm text-white bg-[#EFD33D] ${
+                          product?.sellingStatus === "Hot" && "mt-2"
+                        }`}
+                      >
+                        <h1 className="whitespace-pre font-semibold">
+                          {product.discount} % OFF
+                        </h1>
+                      </div>
+                    )}
+                  </div>
+                )
               ) : (
-                <div
-                  className={`w-16 p-1 flex justify-center items-center rounded-md text-sm text-white ${
-                    product?.marketStatus !== "Aviable"
-                      ? product?.marketStatus === "Hot"
-                        ? "bg-[#EE5858]"
-                        : "bg-gray-500"
-                      : ""
-                  } absolute left-0 top-0 ml-2 z-10`}
-                >
-                  <h1 class>{product.marketStatus}</h1>
+                <div className="w-20 p-1 absolute left-0 top-0 ml-2 z-10 flex justify-center items-center rounded-md text-sm text-white bg-gray-400 mt-2">
+                  <h1 className="whitespace-pre font-semibold">
+                    {product.marketStatus}
+                  </h1>
                 </div>
               )}
+
+              {/* {product?.marketStatus === "Sold Out" && (
+                <div
+                  className={`w-16 p-1 flex justify-center items-center rounded-md text-sm text-white bg-gray-500`}
+                >
+                  <h1>{product.marketStatus}</h1>
+                </div>
+              )} */}
             </div>
           ))}
         </div>
