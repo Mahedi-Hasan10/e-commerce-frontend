@@ -376,13 +376,7 @@ const BestDeal = () => {
                 </div>
               )}
 
-              {/* {product?.marketStatus === "Sold Out" && (
-                <div
-                  className={`w-16 p-1 flex justify-center items-center rounded-md text-sm text-white bg-gray-500`}
-                >
-                  <h1>{product.marketStatus}</h1>
-                </div>
-              )} */}
+              
             </div>
           ))}
         </div>
