@@ -100,15 +100,14 @@
   height: 50px !important;
   background-color: #fa8232;
   border-radius: 100%;
+  position: relative;
 }
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  width: 15% !important; /* Adjust the width as needed */
-  height: 15% !important;
-  display: flex;
-  justify-content: center; /* Horizontal */
-  align-items: center;
-  color: white; /* Vertical */
+  display: none !important;
+  justify-content: center; /*
+
   /* Adjust the height as needed */
 }
 

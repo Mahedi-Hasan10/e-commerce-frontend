@@ -1,9 +1,13 @@
 "use client";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 import "swiper/css";
 import "swiper/css/navigation";
+
+// import "swiper/swiper-bundle.min.css";
 
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
@@ -37,17 +41,20 @@ const Shopcategory = () => {
   ];
 
   return (
-    <div className="container public-sans mt-8">
+    <div className="container public-sans mt-8 ">
       <section className="text-center">
         <h1 className="text-2xl font-medium">Shop with Categories</h1>
       </section>
-      <section className="mt-10">
+      <section className="mt-10 ">
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
-          navigation={true}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
           modules={[Navigation]}
-          className="mySwiper"
+          className="mySwiper "
         >
           {categories.map((category, index) => (
             <SwiperSlide key={index} id="slide">
@@ -63,6 +70,12 @@ const Shopcategory = () => {
               </div>
             </SwiperSlide>
           ))}
+          <div className="swiper-button-next custom-next ">
+            <IoIosArrowRoundForward className="text-white   font-semibold" />
+          </div>
+          <div className="swiper-button-prev custom-prev ">
+            <IoIosArrowRoundBack className="text-white" />
+          </div>
         </Swiper>
       </section>
     </div>
