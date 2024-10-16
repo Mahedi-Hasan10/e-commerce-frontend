@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { startCountDown } from "../common/countdown"; // Adjust the path based on your project structure
 
 const BestDeal = () => {
-
   const products = [
     {
       index: 1,
@@ -163,7 +162,7 @@ const BestDeal = () => {
         </div>
       </section>
       {/* Product section */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 mt-5">
+      <section className="grid grid-cols-1 space-y-3 lg:space-y-0 lg:grid-cols-12 mt-5">
         {/* Left Section */}
         <div className="md:col-span-3 p-2 border-2 relative border-gray-200 flex flex-col ">
           <Image
@@ -284,8 +283,6 @@ const BestDeal = () => {
                   </h1>
                 </div>
               )}
-
-              
             </div>
           ))}
         </div>
