@@ -199,7 +199,7 @@ const ComputerAcess = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Rate allowHalf defaultValue={product.rating} />
+                    <Rate allowHalf disabled defaultValue={product.rating} />
                     <span className="text-gray-500">
                       ({product.reviewCount})
                     </span>

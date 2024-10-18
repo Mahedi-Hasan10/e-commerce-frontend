@@ -28,7 +28,7 @@ const Newsletter = () => {
   ];
 
   return (
-    <div className="bg-[#1B6392] p-10 public-sans mt-8">
+    <div className="bg-[#1B6392] p-10 public-sans">
       <section className="max-w-[624px] text-center text-white mx-auto space-y-8">
         <h1 className="text-4xl font-semibold">Subscribe to our newsletter</h1>
         <p className="text-[1rem] max-w-[524px] mx-auto">

@@ -15,8 +15,6 @@ export default function RootLayout({ children }) {
       <body className="">
         <Navbar />
         {children}
-        {/* <BottomBar /> */}
-      
         <div className="bg-[#191C1F] public-sans">
           <Footer />
         </div>
