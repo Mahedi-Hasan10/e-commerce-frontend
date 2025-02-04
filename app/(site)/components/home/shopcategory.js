@@ -49,6 +49,7 @@ const Shopcategory = () => {
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
+          loop={true}
           navigation={{
             nextEl: ".custom-next",
             prevEl: ".custom-prev",

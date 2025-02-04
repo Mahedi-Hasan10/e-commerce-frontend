@@ -52,6 +52,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <div className=" bg-[#1b6392] md:py-4 py-2 border-b border-b-white border-opacity-30">
         <div className="flex sm:flex-row flex-col items-center justify-between container">
           <p className="text-white md:text-base text-sm">
@@ -69,13 +70,14 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <div className=" bg-[#1b6392] md:py-4 py-2 border-b border-b-white">
         <div className="flex items-center justify-between container gap-4">
           <div className="flex items-center gap-2 text-white font-bold text-3xl">
             <FaBagShopping className="text-yellow-500" />
             <span>MStore</span>
           </div>
-          <div className="bg-white md:flex hidden items-center gap-2 px-2 w-[653px] rounded-[4px]">
+          <div className="bg-white sm:flex hidden items-center gap-2 px-2 w-[653px] rounded-[4px]">
             <Input
               onChange={(e) => console.log(e.target.value)}
               placeholder="Search for anything..."
@@ -87,10 +89,10 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2 text-white md:text-xl text-lg font-semibold ">
-            <FaSearch className="md:hidden flex" />
-            <FiShoppingCart className="cursor-pointer md:flex hidden" />
+            <FaSearch className=" flex" />
+            <FiShoppingCart className="cursor-pointer " />
             <CiHeart className="cursor-pointer text-2xl" />
-            <FaUser className="cursor-pointer md:flex hidden" />
+            <FaUser className="cursor-pointer " />
           </div>
         </div>
       </div>
@@ -133,7 +135,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="bottom_nav_item md:!flex !hidden">
+          <div className="bottom_nav_item sm:!flex !hidden">
             <LuPhoneCall />
             <p>+8801998311602</p>
           </div>

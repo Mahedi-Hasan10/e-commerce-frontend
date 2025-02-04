@@ -138,7 +138,7 @@ const BestDeal = () => {
       <section className="flex justify-between items-center">
         <div className="flex items-center gap-5">
           <h1 className="text-2xl font-semibold">Best Deals</h1>
-          <div className="hidden lg:flex gap-2 ">
+          <div className="hidden sm:flex gap-2 ">
             <p className="">Deals Ends In </p>
 
             <time className="bg-[#F3DE6D] px-2">
@@ -164,14 +164,15 @@ const BestDeal = () => {
       {/* Product section */}
       <section className="grid grid-cols-1 space-y-3 lg:space-y-0 lg:grid-cols-12 mt-5">
         {/* Left Section */}
-        <div className="md:col-span-3 p-2 border-2 relative border-gray-200 flex flex-col ">
+        <div className="md:col-span-3 p-2 border-2 relative border-gray-200 lg:flex lg:flex-col hidden ">
+          <div className="">
           <Image
             src="/console.png"
             alt="banner"
             width={280}
             height={268}
             layout="responsive"
-            className="w-full h-auto relative z-10"
+            className="w-full h-auto relative z-10 px-[200px] lg:px-0"
           ></Image>
 
           <div className="space-y-4 flex flex-col">
@@ -195,7 +196,7 @@ const BestDeal = () => {
               <div className="w-[50px] h-full rounded-md  bg-[#FFE7D6] flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
                 <CiHeart className="text-3xl" />
               </div>
-              <button className="hover:bg-gray-300  h-full w-[60%] lg:w-[50%] flex flex-row justify-center items-center gap-2 bg-[#FA8232] text-white hover:text-[#191C1F] text-sm lg:text-base lg:font-bold px-2  lg:p-3 py-2 rounded-[3px] transition duration-300 ease-in-out">
+              <button className="hover:bg-gray-300  h-full w-[60%] lg:w-[50%] flex flex-row justify-center items-center xl:gap-2 bg-[#FA8232] text-white hover:text-[#191C1F] text-sm xl:text-base lg:font-bold  xl:px-2  xl:p-3 py-2 rounded-[3px] transition duration-300 ease-in-out">
                 <CiShoppingCart className="text-2xl font-bold hidden lg:block" />
                 Add to Cart
               </button>
@@ -205,10 +206,11 @@ const BestDeal = () => {
               </div>
             </div>
           </div>
+          </div>
         </div>
 
         {/* Right Section */}
-        <div className="md:col-span-9 grid md:grid-cols-4 gap-2 mt-2 md:mt-0 lg:ml-2">
+        <div className="md:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-2 mt-2 md:mt-0 lg:ml-2">
           {products.map((product, idx) => (
             <div
               key={idx}
