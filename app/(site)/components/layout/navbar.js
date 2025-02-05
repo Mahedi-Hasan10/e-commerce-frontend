@@ -61,11 +61,11 @@ const Navbar = () => {
           <div>
             <div className="flex items-center gap-2 text-white">
               <p>Follow us: </p>
-              <FaFacebook />
-              <FaTwitter />
-              <FaPinterest />
-              <FaYoutube />
-              <FaInstagram />
+              <FaFacebook className=" cursor-pointer"/>
+              <FaTwitter className=" cursor-pointer"/>
+              <FaPinterest className=" cursor-pointer"/>
+              <FaYoutube className=" cursor-pointer"/>
+              <FaInstagram className=" cursor-pointer"/>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2 text-white md:text-xl text-lg font-semibold ">
-            <FaSearch className=" flex" />
+            <FaSearch className=" sm:hidden cursor-pointer" />
             <FiShoppingCart className="cursor-pointer " />
             <CiHeart className="cursor-pointer text-2xl" />
             <FaUser className="cursor-pointer " />

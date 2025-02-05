@@ -139,18 +139,18 @@ const Featureproduct = () => {
   // };
 
   return (
-    <div className="container public-sans mt-8">
-      <section className="grid grid-cols-1 lg:grid-cols-12 lg:gap-3">
+    <div className="container public-sans">
+      <section className="xl:grid grid-cols-1 xl:grid-cols-12 lg:gap-3">
         {/* // Left Div */}
-        <div className="md:col-span-3 bg-[#F3DE6D] pt-8 ">
-          <div className="flex flex-col items-center px-2">
+        <div className="h-full sm:h-[400px] xl:h-full xl:col-span-3 flex flex-col sm:flex-row xl:flex-col items-center  bg-[#F3DE6D] xl:pt-8 ">
+          <div className="w-full sm:w-[50%] lg:w-full flex flex-col items-center px-2 mt-5 sm:mt-0">
             <h3 className="text-[#BE4646] text-sm mt-4">
               COMPUTER & ACCESSORIES
             </h3>
             <h1 className="text-4xl font-medium mt-3">32% Discount</h1>
             <p className="text-[#475156] mt-3">For all electronics products</p>
-            <div className="flex items-center gap-2 mt-3">
-              <p className="text-sm">Offer Ends Of: </p>
+            <div className="flex  flex-row items-center gap-2 mt-3">
+              <p className="text-base xl:text-sm">Offer Ends Of: </p>
               <div className="bg-white text-sm p-1 rounded-sm">
                 ENDS OF CHRISTMAS
               </div>
@@ -159,15 +159,19 @@ const Featureproduct = () => {
               SHOP NOW <FaArrowRightLong />
             </button>
           </div>
+          
+          <div className="w-full sm:w-[50%] lg:w-full h-full">
           <Image
             src="/featureproduct.jpg"
             width={148}
-            height={148}
+            height={10}
             alt="Feature Product"
             layout="responsive"
-            className="w-full h-full object-cover"
+            className="w-full max-h-[400px] "
           />
-        </div>
+          </div>
+          </div>
+
         {/* /Right Div */}
         <div className="md:col-span-9">
           <section className="flex justify-between mt-4 lg:mt-0 items-center">
@@ -178,7 +182,7 @@ const Featureproduct = () => {
             </div>
 
             <div className="flex items-center gap-5">
-              <div className="hidden lg:flex">
+              <div className="hidden xl:flex">
                 <nav className="text-gray-400  gap-5 hidden md:flex  items-center">
                   {navLinks.map((link) => (
                     <Link
@@ -200,7 +204,7 @@ const Featureproduct = () => {
           </section>
           {/* Product Section */}
           <section className="">
-            <div className="grid md:grid-cols-4 gap-4 mt-5">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
               {products.map((product, idx) => (
                 <div
                   key={idx}
@@ -211,8 +215,8 @@ const Featureproduct = () => {
                     <Image
                       src={product.image}
                       alt="image"
-                      width={216}
-                      height={188}
+                      width={900}
+                      height={900}
                       layout="responsive"
                       className="w-full h-auto relative z-10"
                     />
@@ -220,14 +224,14 @@ const Featureproduct = () => {
                     {/* Hover section */}
                     <div className="absolute inset-0 bg-gray-600/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                       <div className="flex justify-center gap-2 items-center h-full">
-                        <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                          <CiHeart className="text-3xl" />
+                        <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                          <CiHeart className="text-2xl" />
                         </div>
-                        <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                          <IoEyeOutline className="text-3xl" />
+                        <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                          <IoEyeOutline className="text-2xl" />
                         </div>
-                        <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                          <CiShoppingCart className="text-3xl" />
+                        <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                          <CiShoppingCart className="text-2xl" />
                         </div>
                       </div>
                     </div>

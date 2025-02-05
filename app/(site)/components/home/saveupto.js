@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Saveupto = () => {
   return (
-    <div className="p-12 max-w-[1430px] mx-auto bg-[#FFE7D6] mt-8">
+    <div className="p-12 max-w-[1430px] mx-auto bg-[#FFE7D6] my-24">
       <section className="container">
         <div className="flex flex-col md:flex-row gap-5 items-center justify-between ">
           <div className="">

@@ -105,7 +105,7 @@ const Flashsell = () => {
 
   return (
     <section className="container public-sans mt-10">
-      <section className="grid grid-cols-1 lg:grid-cols-4 gap-5">
+      <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Flash Sell */}
         <div className="flex flex-col space-y-2">
           {flashsell.map((categoryItem) => (

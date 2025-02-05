@@ -132,8 +132,8 @@ const ComputerAcess = () => {
     return discountedPriceRounded;
   }
   return (
-    <div className="container public-sans mt-8">
-      <section className="grid grid-cols-1 lg:grid-cols-12  space-y-4 lg:space-y-0 lg:gap-4  ">
+    <div className="container public-sans mt-24">
+      <section className="grid grid-cols-1 xl:grid-cols-12  space-y-4 xl:space-y-0 xl:gap-4  ">
         {/* /left Div */}
         <div className="md:col-span-9">
           <section className="flex justify-between mt-4 lg:mt-0 items-center">
@@ -145,7 +145,7 @@ const ComputerAcess = () => {
 
             <div className="flex items-center gap-5">
               <div className="hidden lg:flex">
-                <nav className="text-gray-400  gap-5 hidden md:flex  items-center">
+                <nav className="text-gray-400  gap-5 hidden 2xl:flex  items-center">
                   {navLinks.map((link) => (
                     <Link
                       key={link.name}
@@ -166,7 +166,7 @@ const ComputerAcess = () => {
           </section>
           {/* Product Section */}
           <section className="">
-            <div className="grid md:grid-cols-4 gap-4 mt-5">
+            <div className="grid  sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
               {products.map((product, idx) => (
                 <div
                   key={idx}
@@ -186,14 +186,14 @@ const ComputerAcess = () => {
                     {/* Hover section */}
                     <div className="absolute inset-0 bg-gray-600/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                       <div className="flex justify-center gap-2 items-center h-full">
-                        <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                          <CiHeart className="text-3xl" />
+                        <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                          <CiHeart className="text-2xl" />
                         </div>
-                        <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                          <IoEyeOutline className="text-3xl" />
+                        <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                          <IoEyeOutline className="text-2xl" />
                         </div>
-                        <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                          <CiShoppingCart className="text-3xl" />
+                        <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                          <CiShoppingCart className="text-2xl" />
                         </div>
                       </div>
                     </div>
@@ -254,9 +254,9 @@ const ComputerAcess = () => {
         </div>
         {/* // Right Div */}
         <div className="md:col-span-3  ">
-          <div className="flex flex-col h-full justify-between gap-4 ">
+          <div className="flex flex-col sm:flex-row xl:flex-col h-full justify-between gap-4 ">
             <article
-              className="flex flex-col items-center 
+              className="w-full flex flex-col items-center 
            p-5  bg-[#F3DE6D]"
             >
               <Image
@@ -285,7 +285,7 @@ const ComputerAcess = () => {
             </article>
 
             <article
-              className="flex flex-col text-white items-center 
+              className="w-full flex flex-col text-white items-center 
            p-7  bg-[#124261]"
             >
               <div className="bg-white/15 text-sm p-2 rounded-sm uppercase">

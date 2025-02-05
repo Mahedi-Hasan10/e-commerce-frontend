@@ -44,18 +44,18 @@ const LatestNews = () => {
     <div className="pt-5 lg:p-8 bg-[#F2F4F5] ">
       <section className="container mt-10">
         <h1 className="text-center text-3xl font-semibold ">Latest News</h1>
-        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8 ">
+        <section className="grid justify-center md:justify-start md:grid-cols-2 xl:grid-cols-3 2xl:gap-8 mt-8 ">
           {products.map((product, idx) => (
             <div
               key={idx}
-              className="border-[1px] bg-[#FFFFFF] p-3 lg:p-5 max-w-[360px] lg:max-w-fit items-center box-border m-4 overflow-hidden"
+              className="border-[1px] bg-[#FFFFFF] p-3 lg:p-5 max-w-[560px] lg:max-w-fit items-center box-border m-4 overflow-hidden"
             >
               <Image
                 src={product.image} // Use the product's imageUrl
                 alt="" // Use the product's name for alt text
                 width={360}
                 height={248}
-                className="w-[360px] h-[248px]"
+                className="w-full h-[248px]"
               />
               <div className="flex justify-start space-x-3 mt-6">
                 <div className="flex items-center gap-2 lg:text-lg">

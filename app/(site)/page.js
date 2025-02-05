@@ -24,7 +24,6 @@ export default function Home() {
       <Saveupto />
       <Flashsell />
       <LatestNews />
-
       <Newsletter />
     </div>
   );

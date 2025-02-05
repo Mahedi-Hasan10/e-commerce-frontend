@@ -133,7 +133,7 @@ const BestDeal = () => {
   }, []);
 
   return (
-    <div className="container public-sans">
+    <div className="container public-sans mt-24">
       {/* Top section */}
       <section className="flex justify-between items-center">
         <div className="flex items-center gap-5">
@@ -228,16 +228,16 @@ const BestDeal = () => {
                 />
 
                 {/* Hover section */}
-                <div className="absolute inset-0 bg-gray-600/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                <div className="absolute inset-0  bg-gray-600/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                   <div className="flex justify-center gap-2 items-center h-full">
-                    <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                      <CiHeart className="text-3xl" />
+                    <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                      <CiHeart className="text-2xl" />
                     </div>
-                    <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                      <IoEyeOutline className="text-3xl" />
+                    <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                      <IoEyeOutline className="text-2xl" />
                     </div>
-                    <div className="w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
-                      <CiShoppingCart className="text-3xl" />
+                    <div className="w-[40px] h-[40px] rounded-full cursor-pointer bg-white flex justify-center items-center hover:bg-[#FA8232] transition-colors duration-300">
+                      <CiShoppingCart className="text-2xl" />
                     </div>
                   </div>
                 </div>

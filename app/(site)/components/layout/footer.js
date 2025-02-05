@@ -42,7 +42,7 @@ const Footer = () => {
   return (
     <footer className="text-white public-sans">
       <section className=" container ">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5  gap-4 py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5  gap-4 py-16">
           <div className="">
             <div className="flex items-center gap-2 text-white font-bold text-3xl">
               <FaBagShopping className="text-yellow-500" />
@@ -140,7 +140,7 @@ const Footer = () => {
         </div>
       </section>
       <div className="border-t-2 border-[#303639] text-center">
-        <h1 className="py-4">Copyright by @Istiak</h1>
+        <h1 className="py-4">Copyright © 2025 - All right reserved by RBB CodeLab</h1>
       </div>
     </footer>
   );
