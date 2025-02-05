@@ -93,7 +93,8 @@ const Hero = () => {
             loop={true} // Enables loop mode
             pagination={{ clickable: true }} // Optional: pagination dots
             modules={[EffectFade, Pagination]}
-            className="mySwiper"
+            className="mySwiper text-black"
+
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>

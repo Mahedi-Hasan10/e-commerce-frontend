@@ -115,3 +115,9 @@
   width: 200px !important;
   height: auto !important;
 }
+.swiper-pagination-bullet-active{
+@apply !bg-black !w-[10px] !h-[10px];
+}
+.swiper-pagination-bullet{
+@apply !w-[10px] !h-[10px] !select-none;
+}
