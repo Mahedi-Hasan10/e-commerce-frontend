@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../common/button";
 import {
   FaArrowRightLong,
@@ -18,10 +18,14 @@ import { GoGitCompare } from "react-icons/go";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuPhoneCall } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
-import { SingleCategoryMenu } from "../common/categoryNav";
 import MyTooltip from "../common/tooltip";
 import Navigationmenu from "@/components/ui/navigationmenu";
+import Link from "next/link";
+import Shoppingcart from "@/components/ui/shoppingcart";
 const Navbar = () => {
+  
+  const [shoppingCardModalOpen, setShoppingCardModalOpen] = useState(false);
+
   return (
     <header>
       <div className="md:py-4 py-2 bg-black/90 public-sans">
@@ -89,12 +93,20 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-white md:text-xl text-lg font-semibold ">
+          <div className="z-50 relative flex items-center gap-2 text-white md:text-xl text-lg font-semibold ">
             <FaSearch className=" sm:hidden cursor-pointer" />
-            <FiShoppingCart className="cursor-pointer " />
+            <FiShoppingCart className="cursor-pointer " onClick={()=>setShoppingCardModalOpen(!shoppingCardModalOpen)}/>
             <CiHeart className="cursor-pointer text-2xl" />
-            <FaUser className="cursor-pointer " />
+            <Link href={"/"} className=" "><FaUser className="cursor-pointer " />
+            </Link>
+            {
+              shoppingCardModalOpen && <div  className={`absolute top-9 -right-[2px] z-40`}>
+              <Shoppingcart />
+            </div> 
+            }
+
           </div>
+      
         </div>
       </div>
       <div className="  md:py-4 py-2 border-b border-b-gray-500 border-opacity-15">

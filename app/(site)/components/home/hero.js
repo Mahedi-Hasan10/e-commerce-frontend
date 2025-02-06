@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 import Button from "../common/button";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -15,8 +15,10 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectFade, Pagination } from "swiper/modules";
+import Loginmodal from "@/components/ui/loginmodal";
 
 const Hero = () => {
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
   const items = [
     {
       image: "/logo_box.png",
@@ -82,7 +84,12 @@ const Hero = () => {
   ];
 
   return (
-    <section className="py-6 container public-sans">
+    <section className="py-6 container public-sans z-0">
+        {
+              loginModalOpen && <div  className={`z-50 absolute top-[160px] md:top-[190px] right-3`}>
+              <Loginmodal />
+            </div> 
+            }
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-x-5 items-center">
         {/* Grid 1 */}
         <div className="col-span-2 bg-[#F2F4F5] p-[25px] rounded-[6px] h-full flex items-center ">
@@ -109,9 +116,10 @@ const Hero = () => {
                     <p className="pb-[24px] text-[#475156] text-lg font-[400]">
                       {product.details}
                     </p>
-                    <button className="hover:bg-gray-300 flex items-center gap-1 bg-[#FA8232] text-white hover:text-[#191C1F] text-sm lg:text-base font-bold px-2  lg:p-3  py-2 rounded-[3px] transition duration-300 ease-in-out">
+                    <button onClick={()=>setLoginModalOpen(!loginModalOpen)} className="hover:bg-gray-300 flex items-center gap-1 bg-[#FA8232] text-white hover:text-[#191C1F] text-sm lg:text-base font-bold px-2  lg:p-3  py-2 rounded-[3px] transition duration-300 ease-in-out">
                       SHOP NOW <FaArrowRightLong />
                     </button>
+                  
                   </div>
                   <div className="relative">
                     <div className="bg-[#2DA5F3] w-[60px] lg:w-[70px] h-[60px] lg:h-[70px] absolute right-0 rounded-[100px] flex justify-center items-center">
@@ -149,13 +157,13 @@ const Hero = () => {
                   SHOP NOW <FaArrowRightLong />
                 </button>
               </div>
-              <div className="relative ">
-                <div className="bg-[#EFD33D] absolute lg:right-8 lg:-top-5 right-0 -top-10">
+              <div className="relative z-0">
+                <div className="bg-[#EFD33D] z-0 absolute lg:right-8 lg:-top-5 right-0 -top-10">
                   <p className="h-10 w-full px-2 lg:px-[15px] py-2 lg:py-[10px] text-[#141414] text-sm  lg:text-base font-[600] rounded-md">
                     29% OFF
                   </p>
                 </div>
-                <Image src="/hero2.png" alt="sale" width={312} height={312} className="sm:w-[250px] md:w-[312px] "/>
+                <Image src="/hero2.png" alt="sale" width={312} height={312} className="z-0 sm:w-[250px] md:w-[312px] "/>
               </div>
             </div>
           </div>

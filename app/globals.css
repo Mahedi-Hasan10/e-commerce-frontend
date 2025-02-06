@@ -121,3 +121,18 @@
 .swiper-pagination-bullet{
 @apply !w-[10px] !h-[10px] !select-none;
 }
+.ant-modal-close{
+  @apply !p-1 !bg-red-500 !rounded-3xl !text-white;
+}
+.ant-rate{
+  @apply text-[#FA8232] text-xl;
+}
+.swiper-button-prev{
+  @apply !w-[40px] !h-[40px] !relative !-left-5;
+}
+.custom-prev{
+  @apply text-xl;
+}
+.swiper-button-next{
+  @apply !w-[40px] !h-[40px] !relative !left-[345px];
+}
