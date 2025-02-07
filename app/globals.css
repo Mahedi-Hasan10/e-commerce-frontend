@@ -70,9 +70,6 @@
   }
 }
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
   }
@@ -128,11 +125,38 @@
   @apply text-[#FA8232] text-xl;
 }
 .swiper-button-prev{
-  @apply !w-[40px] !h-[40px] !relative !-left-5;
-}
-.custom-prev{
-  @apply text-xl;
+  @apply !w-[30px] !h-[30px] ;
 }
 .swiper-button-next{
-  @apply !w-[40px] !h-[40px] !relative !left-[345px];
+  @apply !w-[30px] !h-[30px] ;
+}
+
+.loginSignup{
+  .ant-tabs{
+    @apply !w-[400px] sm:!w-[424px] !flex !flex-col !justify-center !items-center !border rounded-sm;
+  }
+  .ant-tabs-tab-btn{
+    @apply text-[#77878F] text-xl font-semibold;
+  } 
+  .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    @apply !text-[#000];
+  }
+ .ant-tabs .ant-tabs-content-holder {
+ @apply !w-full;
+  }
+  .ant-tabs-nav {
+    @apply !w-full !text-center;
+  }
+ .ant-tabs-nav-list{
+    @apply !w-full;
+  }
+  .ant-tabs-tab{
+    @apply !w-full flex justify-center;
+  }
+  :hover > .ant-checkbox-inner{
+    @apply !border-[#FA8232];
+  }
+  :where(.css-dev-only-do-not-override-2v094m).ant-checkbox-checked .ant-checkbox-inner{
+  @apply !bg-[#FA8232] !border-[#FA8232];
+  }
 }

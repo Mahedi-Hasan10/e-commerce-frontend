@@ -97,7 +97,7 @@ const Navbar = () => {
             <FaSearch className=" sm:hidden cursor-pointer" />
             <FiShoppingCart className="cursor-pointer " onClick={()=>setShoppingCardModalOpen(!shoppingCardModalOpen)}/>
             <CiHeart className="cursor-pointer text-2xl" />
-            <Link href={"/"} className=" "><FaUser className="cursor-pointer " />
+            <Link href={"/loginsignup"} className=" "><FaUser className="cursor-pointer " />
             </Link>
             {
               shoppingCardModalOpen && <div  className={`absolute top-9 -right-[2px] z-40`}>
@@ -110,11 +110,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className="  md:py-4 py-2 border-b border-b-gray-500 border-opacity-15">
-        <div className="flex justify-between flex-wraps container gap-4">
+        <div className="flex justify-between items-center flex-wraps container gap-4">
           <div className="flex gap-4 justify-between  flex-wrap">
             {/* <SingleCategoryMenu /> */}
             <Navigationmenu />
-            <div className="flex lg:gap-4 gap-4 ">
+            <div className="flex lg:gap-4 gap-4 items-center">
               <div className="bottom_nav_item">
                 <MyTooltip
                   title={<CiLocationOn className="md:text-lg text-2xl" />}
@@ -129,7 +129,7 @@ const Navbar = () => {
                 />
                 <p className="md:flex hidden">Compare</p>
               </div>
-              <div className="bottom_nav_item">
+              <Link href={'/customersupport'} className="bottom_nav_item">
                 <MyTooltip
                   title={
                     <MdOutlineSupportAgent className="md:text-lg text-2xl" />
@@ -137,16 +137,19 @@ const Navbar = () => {
                   content={"Customer Support"}
                 />
                 <p className="md:flex hidden">Customer Support</p>
-              </div>
+              </Link>
+               <Link href={"/fags"}>
               <div className="bottom_nav_item">
-                <MyTooltip
+               <MyTooltip
                   title={
                     <IoIosInformationCircleOutline className="md:text-lg text-2xl" />
                   }
                   content={"Need Help?"}
                 />
                 <p className="md:flex hidden">Need Help?</p>
+               
               </div>
+               </Link>
             </div>
           </div>
           <div className="bottom_nav_item sm:!flex !hidden">

@@ -40,7 +40,7 @@ const Footer = () => {
 
   // className="flex flex-col lg:flex-row  lg:justify-between  py-16"
   return (
-    <footer className="text-white public-sans">
+    <footer className="text-white public-sans bg-[#191C1F] public-sans">
       <section className=" container ">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5  gap-4 py-16">
           <div className="">

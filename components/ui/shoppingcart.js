@@ -66,11 +66,11 @@ const Shoppingcart = () => {
         onCancel={() => setViewCart(false)}
         footer={null}
         width={{
-          xs: '80%',
-          sm: '80%',
+          xs: '90%',
+          sm: '90%',
           md: '80%',
-          lg: '90%',
-          xl: '90%',
+          lg: '95%',
+          xl: '95%',
           xxl: '90%',
         }}
       >

@@ -11,6 +11,7 @@ import { TfiReload } from "react-icons/tfi";
 import { BsCopy } from "react-icons/bs";
 import { MdFacebook, MdOutlineShoppingCart } from "react-icons/md";
 import { IoAddOutline } from "react-icons/io5";
+import { useState } from "react";
 
 const categories = [
     {image: "/01.png"},
@@ -94,14 +95,15 @@ const categories = [
     },
   ]
 const Viewcart = () => {
+  const [selected, setSelected] = useState('radio1');
   const onClick = (e) => {
     console.log('click ', e);
   };
   return (
     <div>
-        <div className=" grid grid-cols-5 gap-[50px]">
-         <div className=" col-span-2">
-            <Image src={'/leptop.png'} alt='laptop' width={900} height={900} className="w-full h-[464px] "/>
+        <div className=" lg:grid grid-cols-5 lg:gap-[50px]">
+         <div className=" col-span-2 mb-10 lg:mb-0">
+            <Image src={'/leptop.png'} alt='laptop' width={900} height={900} className="w-full h-[250px] sm:h-[464px] "/>
 
             <section className="mt-10 relative">
         <Swiper
@@ -115,14 +117,13 @@ const Viewcart = () => {
            breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 10 },
           480: { slidesPerView: 2, spaceBetween: 10 },
-          768: { slidesPerView: 3, spaceBetween: 10 },
-          1024: { slidesPerView: 4, spaceBetween: 18 },
-          1280: { slidesPerView: 5, spaceBetween: 18 },
-          1536: { slidesPerView: 6, spaceBetween: 18 },
+          768: { slidesPerView: 5, spaceBetween: 10 },
+          1024: { slidesPerView: 5, spaceBetween: 10 },
+          1280: { slidesPerView: 6, spaceBetween: 10 },
         }}
         >
           {categories.map((category, index) => (
-            <SwiperSlide key={index} className="!w-[96px] !h-[96px]">
+            <SwiperSlide key={index} className="!lg:w-[96px] !lg:h-[96px]">
               <div className="flex flex-col items-center border border-gray-200  gap-2 cursor-pointer">
                 <Image
                   src={category.image}
@@ -137,8 +138,7 @@ const Viewcart = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        
-        <div className=" z-50 hidden sm:flex absolute top-1/2  w-full ">
+        <div className="z-50 hidden sm:flex absolute top-1/2 justify-center items-center  w-full">
           <button className="swiper-button-prev custom-prev ">
             <IoIosArrowRoundBack className="text-3xl text-white" />
           </button>
@@ -147,18 +147,21 @@ const Viewcart = () => {
           </button>
         </div>
         
+        
       </section>
          </div>
 
          <div className=" col-span-3">
-          <div className="flex flex-row items-center gap-[6px]">
+          <div className="flex flex-col sm:flex-row items-center gap-[6px]">
+            <div className="flex flex-row gap-2 items-center">
             <div className=""><Rate disabled defaultValue={4} /></div>
             <div className="text-sm font-semibold">4.7 Star Rating</div>
+            </div>
             <div className="text-sm font-normal">(21,671 User feedback)</div>
           </div>
-          <h1 className="text-xl font-normal mt-2 mb-4">2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray</h1>
+          <h1 className="text-base text-center sm:text-start  sm:text-xl font-normal mt-5 sm:mt-2 mb-4">2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray</h1>
 
-          <div className="gap-2">
+          <div className="sm:gap-2 gap-0">
             <div className="grid grid-cols-2 justify-between items-center">
                <span><span className="text-sm font-normal text-[#5F6C72]">Sku:</span> <span  className="text-sm font-medium text-black">A264671</span></span>
                <span><span className="text-sm font-normal text-[#5F6C72]">Availability:</span > <span className="text-sm font-medium text-black">In Stock</span></span>
@@ -169,7 +172,7 @@ const Viewcart = () => {
             </div>
           </div>
 
-          <div className="flex flex-row items-center py-6">
+          <div className="flex flex-row items-center justify-center sm:justify-start py-6">
             <div className="flex flex-row items-center">
              <span className="text-2xl font-semibold text-[#2DA5F3]">$1699</span>
              <span className="text-lg font-normal text-[#5F6C72] line-through ml-1">$1999.00</span>
@@ -181,12 +184,34 @@ const Viewcart = () => {
 
           <hr className="border border-[#E4E7E9]"/>
 
-          <div className="grid grid-cols-2 gap-6 justify-between items-center">
+          <div className="sm:grid grid-cols-2 gap-6 space-y-8 sm:space-y-0 justify-between items-center mt-6">
             <div className=" h-[72px] ">
             <h3 className="text-sm font-normal mb-2">Color</h3>
-           <div className="flex flex-row items-center gap-3">
-           <input type="radio" value="color" name="color" id="color" className="w-[44px] h-[34px] !bg-[#124e4e]  border border-[#581515]"/>
-           <input type="radio" value="color" name="color" id="color" className="w-[44px] h-[34px] !bg-[#E0E1E1]  border border-[#E0E1E1]"/>
+           <div className="flex flex-row items-center gap-3 select-none">
+           {['radio1', 'radio2', 'radio3'].map((id) => (
+          <div key={id} className="relative w-10 h-10">
+            <input
+              type="radio"
+              id={id}
+              name="radio"
+              className="hidden"
+              checked={selected === id}
+              onChange={() => setSelected(id)}
+            />
+            <label
+              htmlFor={id}
+              className={`block w-10 h-10 rounded-full border-2 transition-colors cursor-pointer ${
+                selected === id ? 'border-orange-500 bg-white' : 'bg-[#E0E1E1] '
+              }`}
+            >
+              <div
+                className={`absolute top-1/2 left-1/2 w-7 h-7 bg-[#E0E1E1] rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-opacity ${
+                  selected === id ? 'opacity-100' : 'opacity-0'
+                }`}
+              ></div>
+            </label>
+          </div>
+        ))}
            </div>
             </div>
 
@@ -194,9 +219,7 @@ const Viewcart = () => {
               <h3 className="text-sm font-normal mb-2">Size</h3>
             <Menu
               onClick={onClick}
-              style={{
-                width: 312,
-              }}
+            
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
@@ -208,9 +231,6 @@ const Viewcart = () => {
               <h3 className="text-sm font-normal mb-2">Memory</h3>
             <Menu
               onClick={onClick}
-              style={{
-                width: 312,
-              }}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
@@ -222,9 +242,6 @@ const Viewcart = () => {
               <h3 className="text-sm font-normal mb-2">Storage</h3>
             <Menu
               onClick={onClick}
-              style={{
-                width: 312,
-              }}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
@@ -234,21 +251,24 @@ const Viewcart = () => {
             </div>
           </div>
 
-          <div className=" flex flex-row items-center gap-4 justify-between mt-6 select-none">
-            <div className="border-[2px] border-[#E4E7E9] rounded-[3px] px-5 h-[56px] flex flex-row gap-[36px] items-center">
+          <div className="sm:grid grid-cols-4 items-center gap-4 justify-between pt-6 select-none space-y-6 sm:space-y-0">
+            <div className=" col-span-1 w-full border-[2px] border-[#E4E7E9] rounded-sm h-[56px] px-5 flex flex-row justify-between items-center">
             <IoIosRemove className=" cursor-pointer"/>
             <span>01</span>
             <IoAddOutline className=" cursor-pointer"/>
             </div>
-            <div>
-              <button className="flex flex-row items-center text-xl text-white gap-3 font-normal h-[56px] px-[81px]  bg-[#FA8232]"><span>Add to card</span><MdOutlineShoppingCart /></button>
+
+            <div className=" col-span-2 h-[56px]">
+              <button className="flex flex-row items-center justify-center rounded-sm text-xl text-white gap-3 font-normal h-full w-full  bg-[#FA8232]"><span>Add to card</span><MdOutlineShoppingCart /></button>
             </div>
-            <div>
-              <button className="text-[#FA8232] text-base font-bold border-[2px] border-[#FA8232] rounded-sm px-[32px] h-[56px]">Buy Now</button>
+
+            <div className=" col-span-1 h-[56px]">
+              <button className="text-[#FA8232] w-full h-full text-base font-bold border-[2px] border-[#FA8232] rounded-sm">Buy Now</button>
             </div>
           </div>
-           <div className="flex flex-row justify-between items-center py-6">
-            <div className="flex flex-row items-center gap-6">
+
+           <div className="flex flex-col sm:flex-row justify-between items-center py-6">
+            <div className="flex flex-row items-center gap-6 pb-4 sm:pb-0">
                 <div className="flex flex-row items-center text-sm font-normal gap-[6px]">
                     <FaRegHeart />
                     <span>Add to Wishlist</span>

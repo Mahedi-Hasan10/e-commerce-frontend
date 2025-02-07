@@ -1,6 +1,4 @@
-import "../globals.css";
-import Newsletter from "./components/home/newsletter";
-import BottomBar from "./components/layout/bottomBar";
+
 import Footer from "./components/layout/footer";
 import Navbar from "./components/layout/navbar";
 
@@ -9,16 +7,14 @@ export const metadata = {
   description: "A shop where you can get all items here",
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <body className="">
-        <Navbar />
+    <div>
+      <Navbar />
         {children}
-        <div className="bg-[#191C1F] public-sans">
+        <div className="">
           <Footer />
         </div>
-      </body>
-    </html>
+    </div>
   );
 }
