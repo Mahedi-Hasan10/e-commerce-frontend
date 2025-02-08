@@ -4,6 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineDateRange } from "react-icons/md";
 import { BsChatDots } from "react-icons/bs";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 const LatestNews = () => {
   const products = [
@@ -78,9 +79,9 @@ const LatestNews = () => {
                 <article className="text-[#77878F] line-clamp-2 lg:line-clamp-3">
                   {product.description}
                 </article>
-                <button className="hover:bg-[#FA8232] mt-5 flex items-center gap-1 border-[1px] border-[#FA8232] text-[#FA8232] hover:text-white text-sm lg:text-base font-bold px-2 lg:p-3 py-2 rounded-[3px] transition duration-300 ease-in-out">
+                <Link  href={'/bloglist'} className="w-[162px] hover:bg-[#FA8232] mt-5 flex items-center gap-1 border-[1px] border-[#FA8232] text-[#FA8232] hover:text-white text-sm lg:text-base font-bold px-2 lg:p-3 py-2 rounded-[3px] transition duration-300 ease-in-out">
                   READ MORE <FaArrowRightLong />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

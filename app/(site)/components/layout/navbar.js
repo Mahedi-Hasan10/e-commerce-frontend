@@ -78,10 +78,10 @@ const Navbar = () => {
 
       <div className=" bg-[#1b6392] md:py-4 py-2 border-b border-b-white">
         <div className="flex items-center justify-between container gap-4">
-          <div className="flex items-center gap-2 text-white font-bold text-3xl">
+          <Link href={'/'} className="flex items-center gap-2 text-white font-bold text-3xl">
             <FaBagShopping className="text-yellow-500" />
             <span>MStore</span>
-          </div>
+          </Link>
           <div className="bg-white sm:flex hidden items-center gap-2 px-2 w-[653px] rounded-[4px]">
             <Input
               onChange={(e) => console.log(e.target.value)}
