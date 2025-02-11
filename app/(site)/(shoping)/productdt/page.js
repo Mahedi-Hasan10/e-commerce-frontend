@@ -6,13 +6,15 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import { ConfigProvider, Menu, Rate, Tabs } from "antd";
-import { FaRegHeart, FaTencentWeibo, FaTwitter } from "react-icons/fa6";
+import { FaAward, FaHandshakeSimple, FaRegHeart, FaTencentWeibo, FaTwitter } from "react-icons/fa6";
 import { TfiReload } from "react-icons/tfi";
 import { BsCopy } from "react-icons/bs";
-import { MdFacebook, MdKeyboardArrowRight, MdOutlineShoppingCart } from "react-icons/md";
+import { MdFacebook, MdKeyboardArrowRight, MdOutlineShoppingCart, MdPayment } from "react-icons/md";
 import { IoAddOutline, IoHomeOutline } from "react-icons/io5";
 import { useState } from "react";
 import Link from "next/link";
+import { TbTruckDelivery } from "react-icons/tb";
+import { RiCustomerService2Fill } from "react-icons/ri";
 
 const categories = [
     {image: "/01.png"},
@@ -341,60 +343,56 @@ const ProductDt = () => {
         <div className="w-full">
         <title>MacBook Pro Details</title>
      
-     <div className=" mx-auto p-6 grid gap-6 md:grid-cols-3">
+     <div className=" mx-auto p-6 grid gap-6 md:grid-cols-4">
        {/* Description Section */}
-       <div className="p-6 border rounded-lg shadow-md bg-gray-50">
+       <div className=" col-span-2">
          <h3 className="text-xl font-semibold text-orange-600 mb-4">Description</h3>
          <p className="text-gray-700 mb-4">The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple silicon designed for pros — you get groundbreaking performance and amazing battery life. Add to that a stunning Liquid Retina XDR display, the best camera and audio ever in a Mac notebook, and all the ports you need. The first notebook of its kind, this MacBook Pro is a beast. M1 Pro takes the exceptional performance of the M1 architecture to a whole new level for pro users.</p>
          <p className="text-gray-700">Even the most ambitious projects are easily handled with up to 10 CPU cores, up to 16 GPU cores, a 16-core Neural Engine, and dedicated encode and decode media engines that support H.264, HEVC, and ProRes codecs.</p>
        </div>
 
        {/* Features Section */}
-       <div className="p-6 border rounded-lg shadow-md bg-gray-50">
+       <div className="col-span-1">
          <h3 className="text-xl font-semibold text-orange-600 mb-4">Feature</h3>
          <ul className="space-y-3">
            <li className="flex items-center">
-             <i className="ph-shield-check text-orange-600 text-lg"></i>
+             <i className="ph-shield-check text-orange-600 text-lg"><FaAward /></i>
              <span className="ml-3">Free 1 Year Warranty</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-truck text-orange-600 text-lg"></i>
+             <i className="ph-truck text-orange-600 text-lg"><TbTruckDelivery /></i>
              <span className="ml-3">Free Shipping & Fastest Delivery</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-money text-orange-600 text-lg"></i>
+             <i className="ph-money text-orange-600 text-lg"><FaHandshakeSimple /></i>
              <span className="ml-3">100% Money-back Guarantee</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-headphones text-orange-600 text-lg"></i>
+             <i className="ph-headphones text-orange-600 text-lg"><RiCustomerService2Fill /></i>
              <span className="ml-3">24/7 Customer Support</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-lock text-orange-600 text-lg"></i>
+             <i className="ph-lock text-orange-600 text-lg"><MdPayment /></i>
              <span className="ml-3">Secure Payment Method</span>
            </li>
          </ul>
        </div>
 
        {/* Shipping Information Section */}
-       <div className="p-6 border rounded-lg shadow-md bg-gray-50">
+       <div className=" col-span-1">
          <h3 className="text-xl font-semibold text-orange-600 mb-4">Shipping Information</h3>
          <ul className="space-y-3">
            <li className="flex items-center">
-             <i className="ph-arrow-fat-right text-orange-600 text-lg"></i>
-             <span className="ml-3">Courier: 2-4 days, free shipping</span>
+             <span className="">Courier: 2-4 days, free shipping</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-arrow-fat-right text-orange-600 text-lg"></i>
-             <span className="ml-3">Local Shipping: up to one week, $19.00</span>
+             <span className="">Local Shipping: up to one week, $19.00</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-arrow-fat-right text-orange-600 text-lg"></i>
-             <span className="ml-3">UPS Ground Shipping: 4-6 days, $29.00</span>
+             <span className="">UPS Ground Shipping: 4-6 days, $29.00</span>
            </li>
            <li className="flex items-center">
-             <i className="ph-arrow-fat-right text-orange-600 text-lg"></i>
-             <span className="ml-3">Unishop Global Export: 3-4 days, $39.00</span>
+             <span className="">Unishop Global Export: 3-4 days, $39.00</span>
            </li>
          </ul>
        </div>

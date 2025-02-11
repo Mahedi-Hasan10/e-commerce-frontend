@@ -213,3 +213,20 @@
 @apply !w-full !flex !flex-row !justify-center !items-center;
   }
 }
+
+.checkout{
+  :where(.css-dev-only-do-not-override-cdzvx5).ant-checkbox-checked .ant-checkbox-inner {
+    @apply !bg-[#FA8232] !border-[#FA8232];
+    }
+    :hover > .ant-checkbox-inner{
+      @apply !border-[#FA8232];
+    }
+}
+.checkoutRadio{
+  :where(.css-dev-only-do-not-override-cdzvx5).ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+    @apply !bg-[#FA8232] border-2 !border-[#FA8232] !w-5 !h-5;
+  }
+  .ant-radio-inner{
+    @apply !border-[#C9CFD2]  !w-5 !h-5;
+  }
+}
